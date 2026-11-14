@@ -53,18 +53,17 @@ These are deliberate, documented gaps — not hidden behaviour:
 
 ## Download and run
 
-Prebuilt Windows binaries live in [`builds/windows/`](builds/windows/):
-`OpenStruct.exe` (desktop) and `openstruct-cli.exe` (headless).
+Prebuilt binaries live in [`builds/`](builds/):
 
-Linux packages are produced on a Linux host — locally with
-`scripts/build-linux.sh`, or by the `Release` GitHub workflow when a `v*` tag is
-pushed — and are written to `builds/linux/`. A Windows machine cannot link a
-glibc/X11 desktop binary without a Linux sysroot, so no Linux binary is
-committed from a Windows build. The Linux desktop build needs a working
-X11/Wayland session and OpenGL drivers.
+- **Windows:** [`builds/windows/OpenStruct.exe`](builds/windows/OpenStruct.exe)
+  (desktop) and `openstruct-cli.exe` (headless).
+- **Linux:** [`builds/linux/OpenStruct`](builds/linux/OpenStruct) (desktop) and
+  `openstruct-cli` (headless), built by the `v0.1.0` release workflow on
+  `ubuntu-latest`.
 
-To build for your platform from source, follow
-[`docs/BUILDING.md`](docs/BUILDING.md).
+The Linux desktop build needs a working X11/Wayland session and OpenGL drivers.
+Rebuild either package with the scripts in [`scripts/`](scripts) or the release
+workflow; see [`docs/BUILDING.md`](docs/BUILDING.md).
 
 ## Build from source
 

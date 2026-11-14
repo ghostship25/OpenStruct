@@ -20,12 +20,10 @@ Rebuild with:
 
 ## Linux
 
-`builds/linux/` is populated by `scripts/build-linux.sh` on a Linux host, or by
-the `Release` GitHub workflow on a `v*` tag. A Windows host cannot produce a
-glibc-linked Linux GUI binary without a Linux sysroot, so use a Linux machine
-or CI for the official Linux artifact.
-
-The Linux package contains:
+`builds/linux/` contains the `v0.1.0` package built by the `Release` GitHub
+workflow on `ubuntu-latest`; rebuild it on a Linux host with
+`scripts/build-linux.sh`. A Windows host cannot link a glibc/X11 desktop binary
+without a Linux sysroot. The Linux package contains:
 
 - `OpenStruct` — desktop application.
 - `openstruct-cli` — headless analysis CLI.
