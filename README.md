@@ -11,6 +11,21 @@ readable, hackable structural analysis tool rather than a closed black box.
 **Status:** early public snapshot (`0.1.0`). The linear-static frame workflow is
 usable. The gaps listed below are real, documented and tracked in the roadmap.
 
+## Screenshots
+
+3D view of the bundled 5,000-joint, 50-storey benchmark model:
+
+![3D view of the benchmark model](docs/screenshots/01-3d-benchmark-model.png)
+
+Plan view of the same model with grids, joints and supports:
+
+![Plan view of the benchmark model](docs/screenshots/02-plan-view.png)
+
+Design menu: steel, concrete, composite and shear-wall checks, detailing and
+reports:
+
+![Design menu](docs/screenshots/03-design-menu.png)
+
 ## What works
 
 - **3D frame and truss analysis** with the direct stiffness method, member
@@ -118,13 +133,6 @@ cargo test --workspace --locked
 
 The suite covers frame stiffness, vertical members, area-load transfer, load
 combinations, E2K round-trips, section properties, editing and design checks.
-
-## Name
-
-The application is **OpenStruct**, as chosen by the project owner. The name is
-also used by a Ruby standard-library class; if a distinctive public brand is
-preferred later, **OpenStrut** and **StructForge** are available alternatives.
-The crates and binaries use `openstruct`, so a rename is mechanical.
 
 ## License
 
