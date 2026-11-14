@@ -1,0 +1,25 @@
+[package]
+name = "openstruct-gui"
+version.workspace = true
+edition = "2024"
+license.workspace = true
+rust-version.workspace = true
+description = "OpenStruct desktop application"
+
+[dependencies]
+openstruct = { path = "../../crates/openstruct" }
+eframe = { workspace = true, features = ["default_fonts", "wgpu", "accesskit", "persistence"] }
+egui.workspace = true
+egui_extras.workspace = true
+rfd.workspace = true
+log.workspace = true
+env_logger = "0.11"
+serde.workspace = true
+serde_json.workspace = true
+nalgebra.workspace = true
+thiserror.workspace = true
+bytemuck = { version = "1", features = ["derive"] }
+
+[[bin]]
+name = "openstruct-gui"
+path = "src/main.rs"

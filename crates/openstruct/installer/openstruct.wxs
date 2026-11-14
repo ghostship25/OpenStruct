@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="OpenStruct" Language="1033" Version="0.1.0"
+           Manufacturer="OpenStruct Contributors" UpgradeCode="12345678-1234-1234-1234-123456789012">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of OpenStruct is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Feature Id="ProductFeature" Title="OpenStruct" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="OpenStruct">
+          <Component Id="MainExecutable" Guid="*">
+            <File Id="OpenStructExe" Source="target\release\openstruct-gui.exe" KeyPath="yes" />
+          </Component>
+          <Component Id="OpenStructLib" Guid="*">
+            <File Id="OpenStructLib" Source="target\release\openstruct.dll" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="OpenStruct">
+          <Component Id="ApplicationShortcut" Guid="*">
+            <Shortcut Id="ApplicationStartMenuShortcut"
+                      Name="OpenStruct"
+                      Description="Open-source structural analysis"
+                      Target="[#OpenStructExe]"
+                      WorkingDirectory="INSTALLFOLDER" />
+            <RemoveFolder Id="CleanUpShortCut" Directory="ApplicationProgramsFolder" On="uninstall" />
+            <RegistryValue Root="HKCU" Key="Software\OpenStruct" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <ComponentRef Id="MainExecutable" />
+      <ComponentRef Id="OpenStructLib" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </ComponentGroup>
+  </Product>
+</Wix>

@@ -1,0 +1,27 @@
+[package]
+name = "openstruct"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+description = "Open-source 3D structural analysis engine for frames, trusses and buildings"
+repository = "https://github.com/openstruct/openstruct"
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[[bin]]
+name = "openstruct"
+path = "src/main.rs"
+
+[dependencies]
+nalgebra.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+clap = { version = "4.5", features = ["derive"] }
+thiserror.workspace = true
+anyhow = "1"
+
+[dev-dependencies]
+approx = "0.5"

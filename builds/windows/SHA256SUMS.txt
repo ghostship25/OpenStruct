@@ -1,0 +1,3 @@
+f3a2cbd0b6056b85a3bcad174f476be30ecb9f4d4a89d67cb8fa5f89e9dc05fb *OpenStruct.exe
+50b15c99d19c63a5d93ebb07ae96c27587262eb1646766e5b3ab9939cba4b58c *openstruct-cli.exe
+c2c4304f775720a1ac23fbf573818cd056e0976a2a5a4982c07adff164ad7254 *openstruct.dll

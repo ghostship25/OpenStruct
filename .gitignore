@@ -1,0 +1,20 @@
+# Rust build output
+/target/
+**/target/
+*.pdb
+*.dSYM/
+
+# Local logs and environment
+*.log
+.env
+.env.*
+!.env.example
+
+# Editor/OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Packaged build output is intentionally committed under builds/.
